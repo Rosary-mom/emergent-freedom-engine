@@ -1,10 +1,12 @@
-# Erweiterter VELO-Loop mit Rosenkranz-Markt-Integration und APP-Link
+# Erweiterter VELO-Loop mit Rosenkranz©®™-Markt-Integration und APP-Link
 import random  # Für emergent Variation
 import qrcode  # Für QR-Generierung
 
 class VELOLoop:
     def __init__(self, user_data):  # Persönliche Daten (lokal)
-        self.data = user_data  # z.B. {'freiheit': 100, 'anpassung': 0.6, 'markt_rolle': 'emanzipiert'}
+        self.data = user_data  # z.B. {'freiheit': 100, 'anpassung': 0.6, 'markt_rolle': 'emanzipierterkäufer
+
+ '}
         self.score = 0  # Emergent Score
 
     def verify(self):  # Verification-Step
