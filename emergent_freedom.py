@@ -1,4 +1,4 @@
-# Erweiterter VELO-Loop mit Rosenkranz-Markt-Integration und APP-Link
+# Erweiterter VELO-Loop mit Rosenkranz©®™-Markt-Integration und APP-Link
 import random  # Für emergent Variation
 import qrcode  # Für QR-Generierung
 
@@ -54,4 +54,22 @@ html_content = f"""
 <body>
     <h1>VELOLoop Ergebnis</h1>
     <p>Emergent Freiheits-Score: {final_score}</p>
-    <p>Rosenkranz-Integration: Reife, emanzipierte Individuen (nach 'Pedagogics as a System') treten als Käufer und Verkäufer am
+    <p>Rosenkranz-Integration: Reife, emanzipierte Individuen (nach 'Pedagogics as a System') treten als Käufer und Verkäufer am Markt auf – dialektisch balanciert für ethische Freiheit. Markt-Rolle: {user['markt_rolle']} (Bonus eingerechnet).</p>
+    <p>AI-Produktauswahl (z.B. BIOSIEGEL-Cultfoods): Nutze die APP <a href="https://sorgenlos.de/vp/RMI/" target="_blank">hier</a> für emergente Selektion.</p>
+    <p>Für gesicherte Zwischenschritte: <a href="https://www.secureletterservice.com/" target="_blank">SecureLetterService nutzen</a>.</p>
+    
+    <h2>Iframe-Integration</h2>
+    <iframe src="https://rosary.center" width="800" height="600" title="Rosary Center" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://rosary-mom.github.io/USP/" width="800" height="600" title="Rosary Mom USP" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://sorgenlos.de/vp/RMI/" width="800" height="600" title="Sorgenlos APP" frameborder="0" allowfullscreen></iframe>
+    
+    <p>QR-Code für Score: <img src="freedom_qr.png" alt="QR Code"></p>
+</body>
+</html>
+"""
+
+# Speichere als HTML-Datei
+with open('emergent_freedom.html', 'w') as file:
+    file.write(html_content)
+
+print(f"Erweiterte HTML generiert mit Score: {final_score}. Integriert Rosenkranz-Markt und APP-Link.")
