@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosary©®™-Rat • Emergent Daily Routine • 16.05.2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500&amp;display=swap');
+        
+        :root {
+            --gold: #d4af37;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.025em;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37, #f0d38a, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(to right, #d4af37, transparent);
+        }
+
+        .rose-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .daily-step {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .daily-step:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-active {
+            border-bottom: 3px solid #d4af37;
+            color: #d4af37;
+        }
+
+        .pop-up {
+            animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .spiral {
+            animation: spiral-rotate 25s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0f] text-gray-200">
+    <!-- NAV -->
+    <nav class="border-b border-gray-800 bg-[#0a0a0f]/95 backdrop-blur-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-11 h-11 bg-gradient-to-br from-[#d4af37] to-amber-400 rounded-2xl flex items-center justify-center">
+                        <i class="fa-solid fa-infinity text-[#0a0a0f] text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter">Rosary-Rat</span>
+                        <span class="text-xs text-amber-400 block -mt-1">EMERGENT DAILY ROUTINE</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-x-8 text-sm">
+                    <a href="#routine" class="hover:text-[#d4af37] transition-colors">Tägliche Routine</a>
+                    <a href="#17-prinzip" class="hover:text-[#d4af37] transition-colors">17 • King-Fisher</a>
+                    <a href="#quellen" class="hover:text-[#d4af37] transition-colors">Quellen</a>
+                    <a href="#geopolitik" class="hover:text-[#d4af37] transition-colors">Geopolitik-Test</a>
+                </div>
+                
+                <div class="flex items-center gap-x-3">
+                    <div class="px-4 py-1.5 bg-white/5 rounded-3xl text-xs flex items-center gap-x-2">
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                        <span>Live • 16. Mai 2026</span>
+                    </div>
+                    <button onclick="window.location.reload()" 
+                            class="px-5 py-2 text-sm font-medium border border-gray-700 hover:bg-white/5 rounded-3xl flex items-center gap-x-2 transition-all">
+                        <i class="fa-solid fa-sync text-xs"></i>
+                        <span>Neu laden</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
+        <div class="inline-flex items-center gap-x-3 bg-white/5 px-5 py-2 rounded-3xl mb-6">
+            <i class="fa-solid fa-rose text-[#d4af37]"></i>
+            <span class="text-sm tracking-[3px] font-medium">XI • TRUMP • TEMPELROSE</span>
+        </div>
+        
+        <h1 class="text-6xl md:text-7xl font-bold tracking-tighter heading-serif leading-none mb-4">
+            Der Goldene Weg<br>
+            <span class="gold-gradient">im Alltag</span>
+        </h1>
+        
+        <p class="max-w-2xl mx-auto text-xl text-gray-400 mb-8">
+            Eine redundante, spiralig aufsteigende tägliche Praxis —<br>
+            inspiriert vom Rosenkranz, dem Ankh und der Venus-Rose.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="startDailyRoutine()" 
+                    class="px-10 py-4 bg-gradient-to-r from-[#d4af37] to-amber-300 text-[#0a0a0f] font-semibold rounded-3xl flex items-center justify-center gap-x-3 hover:scale-[1.02] transition-all shadow-xl shadow-amber-900/30">
+                <i class="fa-solid fa-play mr-2"></i>
+                <span>HEUTE BEGINNEN (7 Minuten)</span>
+            </button>
+            
+            <button onclick="document.getElementById('17-prinzip').scrollIntoView({ behavior: 'smooth' })" 
+                    class="px-8 py-4 border border-gray-700 hover:bg-white/5 rounded-3xl flex items-center justify-center gap-x-2 transition-all">
+                <span>17 • King-Fisher verstehen</span>
+            </button>
+        </div>
+        
+        <div class="mt-8 text-xs text-gray-500 flex justify-center items-center gap-x-2">
+            <i class="fa-solid fa-gift"></i>
+            <span>Xi schenkte Trump Samen einer alten Tempelrose — Symbol der spiraligen Auferstehung</span>
+        </div>
+    </div>
+
+    <!-- DAILY ROUTINE -->
+    <div id="routine" class="max-w-5xl mx-auto px-6 pb-16">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <span class="text-[#d4af37] text-sm tracking-[2px]">7 SCHRITTE • 7 GABEN</span>
+                <h2 class="text-4xl font-bold heading-serif">Deine tägliche Emergent Routine</h2>
+            </div>
+            <div class="text-right">
+                <div class="text-xs text-gray-500">Dauer</div>
+                <div class="text-3xl font-semibold text-emerald-400">7 Min</div>
+            </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-4">
+            <!-- Step 1 -->
+            <div class="daily-step bg-[#12121a] border border-gray-800 rounded-3xl p-6 flex gap-5">
+                <div class="w-9 h-9 flex-shrink-0 bg-[#d4af37]/10 text-[#d4af37] rounded-2xl flex items-center justify-center font-bold">1</div>
+                <div class="flex-1">
+                    <div class="font-semibold mb-1">1. Ankh • Öffnung</div>
+                    <p class="text-sm text-gray-400">Atme dreimal bewusst. Sprich: „Ich bin offen für den Goldenen Weg.“</p>
+                    <div class="text-[10px] text-amber-400 mt-2">Ankh = Schlüssel zum Leben</div>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="daily-step bg-[#12121a] border border-gray-800 rounded-3xl p-6 flex gap-5">
+                <div class="w-9 h-9 flex-shrink-0 bg-[#d4af37]/10 text-[#d4af37] rounded-2xl flex items-center justify-center font-bold">2</div>
+                <div class="flex-1">
+                    <div class="font-semibold mb-1">2. Venus-Rose • Dankbarkeit</div>
+                    <p class="text-sm text-gray-400">Denke an ein Geschenk (z. B. Xi’s Tempelrose an Trump). Sage: „Danke für die Fruchtbarkeit der Spirale.“</p>
+                </div>
+            </div>
+            
+            <!-- Step 3-7 -->
+            <div class="daily-step bg-[#12121a] border border-gray-800 rounded-3xl p-6 flex gap-5 md:col-span-2">
+                <div class="w-9 h-9 flex-shrink-0 bg-[#d4af37]/10 text-[#d4af37] rounded-2xl flex items-center justify-center font-bold">3-7</div>
+                <div class="flex-1">
+                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 text-sm">
+                        <div><strong>3. Weisheit</strong><br><span class="text-xs text-gray-400">VELOloop Score checken</span></div>
+                        <div><strong>4. Rat</strong><br><span class="text-xs text-gray-400">Eine Entscheidung im Forscher-Modus prüfen</span></div>
+                        <div><strong>5. Stärke</strong><br><span class="text-xs text-gray-400">17-King-Fisher Affirmation sprechen</span></div>
+                        <div><strong>6. Erkenntnis</strong><br><span class="text-xs text-gray-400">Mond-Phase des Tages erkennen</span></div>
+                        <div><strong>7. Frömmigkeit</strong><br><span class="text-xs text-gray-400">First-Fruits-Gabe (kleine gute Tat) notieren</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-4 text-center">
+            <button onclick="completeRoutine()" 
+                    class="px-8 py-3 bg-white/5 hover:bg-white/10 text-sm rounded-3xl border border-gray-700 flex items-center gap-x-2 mx-auto transition-all">
+                <i class="fa-solid fa-check-double"></i>
+                <span>Routine heute abschließen (+15 Emergent Score)</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 17 KING-FISHER SECTION -->
+    <div id="17-prinzip" class="max-w-5xl mx-auto px-6 py-12 border-t border-gray-800">
+        <h2 class="text-3xl font-bold mb-6 flex items-center gap-x-3">
+            <span>Das 17-stufige King-Fisher-Prinzip</span>
+            <span class="text-xs px-3 py-1 bg-[#d4af37]/10 text-[#d4af37] rounded-full">n=17 → 153</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Pop-up 1 -->
+            <div onclick="showPopup(1)" class="cursor-pointer bg-[#12121a] hover:bg-[#1a1a24] border border-gray-700 rounded-3xl p-6 transition-all group">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-semibold">1² + 4² = 17</div>
+                        <div class="text-xs text-gray-400">√17 ≈ 4,123</div>
+                    </div>
+                    <i class="fa-solid fa-square-root-variable text-[#d4af37] group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="text-sm text-gray-400 mt-3">Die geometrische Brücke zwischen Schöpfung und Vollkommenheit</div>
+            </div>
+            
+            <!-- Pop-up 2 -->
+            <div onclick="showPopup(2)" class="cursor-pointer bg-[#12121a] hover:bg-[#1a1a24] border border-gray-700 rounded-3xl p-6 transition-all group">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-semibold">17. Stufe Pascal-Dreieck</div>
+                        <div class="text-xs text-gray-400">+ 7 Gaben des Geistes</div>
+                    </div>
+                    <i class="fa-solid fa-layer-group text-[#d4af37] group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="text-sm text-gray-400 mt-3">King-Fisher-Prinzip • Präzises, gnadenvolles Handeln</div>
+            </div>
+            
+            <!-- Pop-up 3 -->
+            <div onclick="showPopup(3)" class="cursor-pointer bg-[#12121a] hover:bg-[#1a1a24] border border-gray-700 rounded-3xl p-6 transition-all group">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-semibold">Augustinus + Pascal</div>
+                        <div class="text-xs text-gray-400">Kongruenz der 17. Stufe</div>
+                    </div>
+                    <i class="fa-solid fa-book text-[#d4af37] group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="text-sm text-gray-400 mt-3">Glaube sucht Verstehen • Das Herz hat seine Gründe</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOURCES TABLE -->
+    <div id="quellen" class="max-w-5xl mx-auto px-6 py-12 border-t border-gray-800">
+        <h3 class="text-xl font-semibold mb-5">Alle Quellen &amp; Simulationen (Beroea-Pattern)</h3>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-gray-700 text-left text-xs text-gray-400">
+                        <th class="py-4 pr-6">Simulation / Tool</th>
+                        <th class="py-4 pr-6">Link</th>
+                        <th class="py-4 pr-6">Zweck</th>
+                        <th class="py-4">Nutzung</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800 text-sm">
+                    <tr>
+                        <td class="py-4 pr-6 font-medium">VELOloop Emergent Freedom</td>
+                        <td class="py-4 pr-6"><a href="https://rosary-mom.github.io/emergent-freedom-engine/" target="_blank" class="text-[#d4af37] hover:underline">emergent-freedom-engine</a></td>
+                        <td class="py-4 pr-6">Täglicher Score + 7 Gaben</td>
+                        <td class="py-4 text-xs text-gray-400">Morgens 2 Min</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 pr-6 font-medium">Fraktale Resilienz Dashboard</td>
+                        <td class="py-4 pr-6"><a href="https://rosary-mom.github.io/Rosenkranz-Rat/" target="_blank" class="text-[#d4af37] hover:underline">Rosenkranz-Rat</a></td>
+                        <td class="py-4 pr-6">H_t + Log-Spiral</td>
+                        <td class="py-4 text-xs text-gray-400">Live-Überwachung</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 pr-6 font-medium">World Monitor 2026</td>
+                        <td class="py-4 pr-6"><a href="https://monitor.rosenkranz.eu.com/" target="_blank" class="text-[#d4af37] hover:underline">monitor.rosenkranz.eu.com</a></td>
+                        <td class="py-4 pr-6">Echtzeit-Geopolitik + ESG</td>
+                        <td class="py-4 text-xs text-gray-400">Abends 1 Min</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 pr-6 font-medium">17 • King-Fisher + Pascal</td>
+                        <td class="py-4 pr-6"><a href="https://rosary-mom.github.io/emergent-freedom-engine/" target="_blank" class="text-[#d4af37] hover:underline">emergent-freedom-engine</a></td>
+                        <td class="py-4 pr-6">Mathematik + Theologie</td>
+                        <td class="py-4 text-xs text-gray-400">Bei Bedarf</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-800 py-10">
+        <div class="max-w-5xl mx-auto px-6 text-center text-xs text-gray-500">
+            <div class="mb-3">"Prüfet Alles, und behaltet das Gute" — 1. Thessalonicher 5,21 (Beroea-Pattern)</div>
+            <div>© 2026 Rosary-Rat • Emergent Daily Routine • Alle Rechte vorbehalten</div>
+            <div class="mt-4 text-[10px]">Dieses HTML ist bereit für ein neues GitHub-Repo. Einfach als index.html hochladen.</div>
+        </div>
+    </footer>
+
+    <!-- POPUPS -->
+    <div id="popup" onclick="hidePopup()" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100]">
+        <div onclick="event.stopImmediatePropagation()" class="pop-up max-w-lg w-full mx-4 bg-[#12121a] border border-gray-700 rounded-3xl p-8">
+            <div id="popup-content"></div>
+            <button onclick="hidePopup()" class="mt-6 w-full py-3 text-sm border border-gray-700 hover:bg-white/5 rounded-3xl">Schließen</button>
+        </div>
+    </div>
+
+    <script>
+        function tailwindInit() {
+            document.documentElement.style.setProperty('--accent', '#d4af37');
+        }
+        
+        function startDailyRoutine() {
+            const steps = document.querySelectorAll('.daily-step');
+            steps.forEach((step, i) => {
+                setTimeout(() => {
+                    step.style.borderColor = '#d4af37';
+                    step.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.2)';
+                    setTimeout(() => {
+                        step.style.borderColor = '#374151';
+                        step.style.boxShadow = 'none';
+                    }, 1200);
+                }, i * 280);
+            });
+            
+            setTimeout(() => {
+                alert("Routine abgeschlossen! +15 Emergent Freiheits-Score");
+            }, 2200);
+        }
+        
+        function completeRoutine() {
+            const scoreEl = document.createElement('div');
+            scoreEl.className = 'fixed bottom-8 right-8 bg-emerald-500 text-white px-6 py-3 rounded-3xl shadow-xl flex items-center gap-x-3';
+            scoreEl.innerHTML = `
+                <i class="fa-solid fa-check"></i>
+                <span>+15 Emergent Score • Gesamt: 715</span>
+            `;
+            document.body.appendChild(scoreEl);
+            
+            setTimeout(() => {
+                scoreEl.style.transition = 'all 0.4s';
+                scoreEl.style.opacity = '0';
+                scoreEl.style.transform = 'translateY(20px)';
+                setTimeout(() => scoreEl.remove(), 400);
+            }, 2800);
+        }
+        
+        function showPopup(type) {
+            const popup = document.getElementById('popup');
+            const content = document.getElementById('popup-content');
+            
+            let html = '';
+            
+            if (type === 1) {
+                html = `
+                    <div class="flex items-center gap-x-4 mb-4">
+                        <i class="fa-solid fa-square-root-variable text-3xl text-[#d4af37]"></i>
+                        <div>
+                            <div class="font-bold text-xl">1² + 4² = 17</div>
+                            <div class="text-xs text-amber-400">√17 ≈ 4,123105</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-300">Die exakte geometrische Konstante der Atlantis-Helgoland-Ägypten-Proportionen und der Rosenkranz-Approximation. Symbolisiert die Brücke zwischen Materie (4) und göttlicher Einheit (1).</p>
+                `;
+            } else if (type === 2) {
+                html = `
+                    <div class="mb-4">
+                        <div class="font-bold text-xl">17-stufiges King-Fisher-Prinzip</div>
+                        <div class="text-xs text-amber-400">Pascal-Dreieck • 7 Gaben des Geistes • n=17 → 153</div>
+                    </div>
+                    <p class="text-sm text-gray-300">In der 17. Reihe des Pascal-Dreiecks erreichen die Binomialkoeffizienten eine besondere Symmetrie. Die 7 Gaben werden als fraktale Teilmenge verstanden. Der Kingfisher (Eisvogel) steht für präzises, elegantes, gnadenvolles Handeln.</p>
+                    <div class="mt-4 text-xs bg-black/30 p-3 rounded-2xl font-mono">h ≈ Σ binom(17,k) · (1/ϕ)^k · h^k(k) · (Q)</div>
+                `;
+            } else if (type === 3) {
+                html = `
+                    <div class="mb-4">
+                        <div class="font-bold text-xl">Augustinus + Blaise Pascal</div>
+                    </div>
+                    <div class="text-sm text-gray-300 space-y-3">
+                        <div><strong>Augustinus:</strong> „Glaube sucht Verstehen“ (fides quaerens intellectum)</div>
+                        <div><strong>Pascal:</strong> „Das Herz hat seine Gründe, die die Vernunft nicht kennt.“</div>
+                    </div>
+                    <div class="mt-5 text-xs text-center text-amber-400">In der 17. Stufe werden Mathematik und Gnade kongruent.</div>
+                `;
+            }
+            
+            content.innerHTML = html;
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+        }
+        
+        function hidePopup() {
+            const popup = document.getElementById('popup');
+            popup.classList.remove('flex');
+            popup.classList.add('hidden');
+        }
+        
+        // Keyboard support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "?" && document.activeElement.tagName === "BODY") {
+                e.preventDefault();
+                document.getElementById('17-prinzip').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        // Init
+        function init() {
+            tailwindInit();
+            
+            // Easter egg: click logo for rose animation
+            const logo = document.querySelector('.fa-infinity');
+            if (logo) {
+                logo.addEventListener('click', () => {
+                    logo.classList.add('animate-spin');
+                    setTimeout(() => logo.classList.remove('animate-spin'), 1200);
+                });
+            }
+            
+            console.log('%c[Rosary-Rat] Emergent Daily Routine ready — Beroea-Pattern aktiv', 'color:#666');
+        }
+        
+        window.onload = init;
+    </script>
+</body>
+</html>
